@@ -2,7 +2,8 @@
 
 Aula 1 - Consumo de API
 Nessa aula foi utilizada a API pública do site IMDB
-Com o pacote java.net.httpfoi realizado:
+##
+Com o pacote java.net.http foi realizado:
 <ol>
 <li>A conexão com a API.</li>
 <li>A demanda dos dados com uma classe própria disponibilizada em aula.</li>
