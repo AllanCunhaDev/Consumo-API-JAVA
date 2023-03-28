@@ -1,4 +1,7 @@
+import java.io.File;
+import java.io.InputStream;
 import java.net.URI;
+import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse.BodyHandlers;
@@ -7,7 +10,9 @@ import java.util.Map;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/MostPopularTVs.json";
+
+        
+        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/MostPopularMovies.json";
         URI end = URI.create(url);
         var client = HttpClient.newHttpClient();
         var request = HttpRequest.newBuilder(end).GET().build();
@@ -21,20 +26,22 @@ public class App {
         // System.out.println(listaDeFilmes.get(0));
 
         // Exibir e manipular os dados
-
+        var geradora = new GeradorDeImagens();
         for (Map<String, String> filme : listaDeFilmes) {
-            System.out.println("\u001b[1mTitulo:\u001b[m " + filme.get("title"));
-            System.out.println("\u001b[1mAno de lançamento:\u001b[m " + filme.get("year"));
-            System.out.println("\u001b[1mURL da Imagem:\u001b[m " + filme.get("image"));
-            System.out.print("\u001b[97m\u001b[38;5;214mClassificação:\u001b[m ");
-            double classificacao = Double.parseDouble(filme.get("imDbRating"));
-            for (int star = 1; star <= classificacao; star++) {
-                System.out.print("⭐");
 
+            String urlImagem = filme.get("image");
+            String tituloFilme = filme.get("title");
+            
+            var diretorio = new File("figurinhas/");
+            diretorio.mkdir();
 
-            }
-            System.out.printf("  " + filme.get("imDbRating"));
-            System.out.println("\n");
+            InputStream inputStream = new URL(urlImagem).openStream();
+            String nomeArquivo = "figurinhas/" + tituloFilme.replace(":","-") + ".png";
+            
+            geradora.cria(inputStream, nomeArquivo);
+            
+            System.out.println(tituloFilme);
+            System.out.println();
         }
 
     }
