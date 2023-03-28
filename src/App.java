@@ -31,14 +31,21 @@ public class App {
 
             String urlImagem = filme.get("image");
             String tituloFilme = filme.get("title");
-            
+            double classificacao = Double.parseDouble(filme.get("imDbRating"));
+
+            String textoFigurinha;
+            if(classificacao >= 8.0){
+                textoFigurinha = "Muito bom!";
+            }else{
+                textoFigurinha = "Meia Bomba";
+            }
             var diretorio = new File("figurinhas/");
             diretorio.mkdir();
 
             InputStream inputStream = new URL(urlImagem).openStream();
             String nomeArquivo = "figurinhas/" + tituloFilme.replace(":","-") + ".png";
             
-            geradora.cria(inputStream, nomeArquivo);
+            geradora.cria(inputStream, nomeArquivo, textoFigurinha);
             
             System.out.println(tituloFilme);
             System.out.println();
