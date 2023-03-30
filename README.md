@@ -39,8 +39,8 @@ No terceiro dia refatoramos o código para deixar ele mais flexivel, aproveitáv
 <li>Use recursos do Java 8 e posteriores, como Streams e Lambdas, para mapear uma lista em uma outra.</li>
 <li>Crie uma Enum que une, como configurações, a URL da API e o extrator usado.</li>
 </ol>
-<div>
-<img  align="center" width="300px" heigth="300px" src="https://user-images.githubusercontent.com/106753195/228725354-64172240-34a9-455e-ab87-0e1e85cc6222.png">
+<div align="center">
+<img   width="300px" heigth="300px" src="https://user-images.githubusercontent.com/106753195/228725354-64172240-34a9-455e-ab87-0e1e85cc6222.png">
 </div>
 
 ##
