@@ -34,7 +34,7 @@ public class GeradorDeImagens {
         graphics.drawImage(imagenOriginal, 0, 0, null);
 
         // Configurando a Font
-        var fonte = new Font("Impact", Font.BOLD, 120);
+        var fonte = new Font("Impact", Font.BOLD, 60);
         graphics.setColor(Color.RED);
         graphics.setFont(fonte);
 
