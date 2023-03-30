@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
-import java.util.Map;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -23,19 +22,19 @@ public class App {
         List<Conteudo> conteudos = extrator.extrairConteudos(json);
 
         var geradora = new GeradorDeImagens();
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 0; i < 3; i++) {
 
             Conteudo conteudo = conteudos.get(i);
 
             var diretorio = new File("figurinhas/");
             diretorio.mkdir();
 
-            InputStream inputStream = new URL(conteudo.getUrlImagem()).openStream();
-            String nomeArquivo = "figurinhas/" + conteudo.getTitulo().replace(":","-") + ".png";
+            InputStream inputStream = new URL(conteudo.urlImagem()).openStream();
+            String nomeArquivo = "figurinhas/" + conteudo.titulo().replace(":","-") + ".png";
             
-            geradora.cria(inputStream, nomeArquivo, conteudo.getTitulo());
+            geradora.cria(inputStream, nomeArquivo, conteudo.titulo());
             
-            System.out.println(conteudo.getTitulo());
+            System.out.println(conteudo.titulo());
             System.out.println();
         }
 
