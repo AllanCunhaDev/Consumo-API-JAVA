@@ -24,7 +24,7 @@ No segundo dia as imagens disponíveis nos dados do pedido (JSON) foram utilizad
 <li>Caso o filme tenha nota 8 ou superior, será impresso "Muito bom!"</li>
 <li>Caso o filme tenha nota menor que 8, será impresso "Talvez vale a pena!"</li>
 </ol>
-<div >
+<div align="center">
 <img width="300px" heigth="300px" src="https://user-images.githubusercontent.com/106753195/228392755-a3ad75ce-459d-45df-a8be-ece2fb250d7c.png">
 <img width="300px" heigth="300px" src="https://user-images.githubusercontent.com/106753195/228392949-8ac8ceef-0cbf-4d8b-9d17-eef727efd65f.png">
 </div>
