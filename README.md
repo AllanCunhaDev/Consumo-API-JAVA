@@ -1,4 +1,4 @@
-<h1>Imersão Java</h1>
+<h1>Estudos Java</h1>
 
 Aula 1 - Consumo de API
 Nessa aula foi utilizada a API pública do site IMDB
